@@ -1,0 +1,96 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjgltspq4a1gy"]
+
+[ext_resource type="Texture2D" uid="uid://7fsno7guf4og" path="res://icon.svg" id="1_3ka5u"]
+[ext_resource type="Script" path="res://Template/MainMenu/MainMenu.gd" id="1_ihb7f"]
+[ext_resource type="FontFile" uid="uid://b4wyxsf25wcmx" path="res://Template/Assets/Fonts/ReemKufiInk-Regular.ttf" id="2_j1t0p"]
+[ext_resource type="PackedScene" uid="uid://c6p1x71haijmj" path="res://Template/ButtonWrapper/ButtonWrapper.tscn" id="3_qhdnb"]
+
+[node name="MainMenu" type="BoxContainer"]
+custom_minimum_size = Vector2(1152, 648)
+script = ExtResource("1_ihb7f")
+
+[node name="Background" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1152, 648)
+layout_mode = 2
+color = Color(0.333333, 0.439216, 0.788235, 1)
+
+[node name="LeftVBox" type="VBoxContainer" parent="Background"]
+custom_minimum_size = Vector2(384, 0)
+layout_mode = 0
+offset_right = 384.0
+offset_bottom = 648.0
+
+[node name="Control" type="Control" parent="Background/LeftVBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Logo" type="TextureRect" parent="Background/LeftVBox"]
+layout_mode = 2
+texture = ExtResource("1_3ka5u")
+stretch_mode = 3
+
+[node name="Control2" type="Control" parent="Background/LeftVBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="NewGameButton" parent="Background/LeftVBox" instance=ExtResource("3_qhdnb")]
+layout_mode = 2
+text = "New Game"
+
+[node name="Control3" type="Control" parent="Background/LeftVBox"]
+custom_minimum_size = Vector2(100, 5)
+layout_mode = 2
+
+[node name="OptionsButton" parent="Background/LeftVBox" instance=ExtResource("3_qhdnb")]
+layout_mode = 2
+text = "Options"
+
+[node name="Control4" type="Control" parent="Background/LeftVBox"]
+custom_minimum_size = Vector2(100, 5)
+layout_mode = 2
+
+[node name="ScoreTableButton" parent="Background/LeftVBox" instance=ExtResource("3_qhdnb")]
+layout_mode = 2
+text = "Score Table"
+
+[node name="Control5" type="Control" parent="Background/LeftVBox"]
+custom_minimum_size = Vector2(100, 5)
+layout_mode = 2
+
+[node name="CreditsButton" parent="Background/LeftVBox" instance=ExtResource("3_qhdnb")]
+layout_mode = 2
+text = "Options"
+
+[node name="Control6" type="Control" parent="Background/LeftVBox"]
+custom_minimum_size = Vector2(100, 5)
+layout_mode = 2
+
+[node name="ExitButton" parent="Background/LeftVBox" instance=ExtResource("3_qhdnb")]
+layout_mode = 2
+text = "Exit"
+
+[node name="Control7" type="Control" parent="Background/LeftVBox"]
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 2
+
+[node name="MadeWithLabel" type="Label" parent="Background/LeftVBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_j1t0p")
+theme_override_font_sizes/font_size = 20
+text = "Made with Godo Engine 4.0"
+
+[node name="CenterVBox" type="VBoxContainer" parent="Background"]
+custom_minimum_size = Vector2(764, 0)
+layout_mode = 0
+offset_left = 388.0
+offset_right = 772.0
+offset_bottom = 648.0
+
+[node name="GameTitleLabel" type="Label" parent="Background/CenterVBox"]
+custom_minimum_size = Vector2(0, 648)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_j1t0p")
+theme_override_font_sizes/font_size = 64
+text = "Godot Game Template"
+horizontal_alignment = 1
+vertical_alignment = 1
