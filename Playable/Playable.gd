@@ -6,6 +6,8 @@ signal hud_update_food
 
 var m_clock_timer
 
+@onready var m_food_eaten_sound = load("res://Assets/SFX/food_eaten.wav")
+@onready var m_snake_dead_sound = load("res://Assets/SFX/snake_dead.wav")
 @onready var m_window_size = DisplayServer.window_get_size()
 @onready var m_food = find_child("Food")
 @onready var m_snake = find_child("Snake")
@@ -32,10 +34,12 @@ func on_food_eaten():
 	reset_food_position()
 	m_snake.feed()
 	emit_signal("hud_update_food", m_snake.get_size())
+	SfxManager.play_sfx(m_food_eaten_sound)
 
 
 func on_snake_dead():
 	emit_signal("end", false, m_snake.get_size())
+	SfxManager.play_sfx(m_snake_dead_sound)
 
 
 func on_clock():
